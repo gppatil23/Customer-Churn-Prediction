@@ -18,11 +18,10 @@ We leverage an **Artificial Neural Network (ANN)** for classification and deploy
 ---
 
 ## ⚙️ Tech Stack
-- **Python 3.x**
+- **Python 3.12**
 - **TensorFlow / Keras** – ANN model
 - **Pandas, NumPy, Scikit-learn** – preprocessing
 - **Streamlit** – frontend UI
-- **Matplotlib / Seaborn** – visualization
 
 ---
 
