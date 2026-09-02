@@ -8,13 +8,13 @@ import pickle
 model = tf.keras.models.load_model('classification_model.keras')
 
 #load the encoder and scalar
-with open('label_encoder_gender.pkl','rb') as file:
+with open('preprocessing_files_experiment/label_encoder_gender.pkl','rb') as file:
     label_encoder_gender = pickle.load(file)
 
-with open('onehot_encoder_geo.pkl','rb') as file:
+with open('preprocessing_files_experiment/onehot_encoder_geo.pkl','rb') as file:
     onehot_encoder_geo = pickle.load(file)
 
-with open('scalar.pkl','rb') as file:
+with open('preprocessing_files_experiment/scalar.pkl','rb') as file:
     scalar = pickle.load(file)
 
 
@@ -60,10 +60,10 @@ input_data_scaled = scalar.transform(input_data)
 prediction = model.predict(input_data_scaled)
 prediction_proba = prediction[0][0]
 
-st.write(f'Churn Probability:{prediction_proba}')
+st.title(f'Churn Probability:{prediction_proba}')
 
 if prediction_proba > 0.5:
-    st.write('The customer is likely to churn.')
+    st.title('The customer is likely to churn.')
 else:
-    st.write('The customer is not likely to churn.')
+    st.title('The customer is not likely to churn.')
 
